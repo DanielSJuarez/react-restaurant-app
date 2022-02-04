@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 const MENU = [{
@@ -117,21 +116,21 @@ const MENU = [{
     name: 'Fries',
     price: 3,
     id: uuidv4(),
-    catagory: 'Sides',
+    catagory: 'sides',
     size: 'M',
 },
 {
     name: 'Chips',
     price: 2,
     id: uuidv4(),
-    catagory: 'Sides',
+    catagory: 'sides',
     size: 'M',
 },
 {
     name: 'Cookie',
     price: 4,
     id: uuidv4(),
-    catagory: 'Sides',
+    catagory: 'sides',
     size: 'M',
 },
 {

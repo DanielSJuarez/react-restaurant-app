@@ -1,10 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-function MenuList() {
+function MenuList({name, price}) {
     return (
         <div className='row'>
             <div className="col">
-                I am the a Menu!
+            {name} ${price}
             </div>
         </div>
     );
