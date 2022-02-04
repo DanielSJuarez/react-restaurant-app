@@ -33,6 +33,9 @@ function HookMyFood(props) {
     }
 
     const clearOrder = () => {
+        let previousLocalStorage = JSON.parse(localStorage.getItem('orderlist'));
+        console.log(previousLocalStorage);
+        localStorage.setItem(previousLocalStorage, JSON.stringify(orderList));
         setTotal(0);
         setOrderList([]);
         setScreen(false);
@@ -44,7 +47,7 @@ function HookMyFood(props) {
     ));
 
     const tacoDisplay = tacoSelection.map(menu => (
-        <MenuList {...menu} subTotal={subTotal} order={order} />
+        <MenuList key={menu.id} {...menu} subTotal={subTotal} order={order} />
     ));
 
     const pizzaSelection = menu.filter(menu => (
@@ -52,7 +55,7 @@ function HookMyFood(props) {
     ));
 
     const pizzaDisplay = pizzaSelection.map(menu => (
-        <MenuList {...menu} subTotal={subTotal} order={order} />
+        <MenuList key={menu.id} {...menu} subTotal={subTotal} order={order} />
     ));
 
     const sidesSelection = menu.filter(menu => (
@@ -60,7 +63,7 @@ function HookMyFood(props) {
     ));
 
     const sidesDisplay = sidesSelection.map(menu => (
-        <MenuList {...menu} subTotal={subTotal} order={order} />
+        <MenuList key={menu.id} {...menu} subTotal={subTotal} order={order} />
     ));
 
     const orderDisplay = orderList.map(item => (
