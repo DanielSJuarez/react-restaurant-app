@@ -32,6 +32,12 @@ function HookMyFood(props) {
         setOrderList(removeSelectedItem);
     }
 
+    const clearOrder = () => {
+        setTotal(0);
+        setOrderList([]);
+        setScreen(false);
+    }
+
 
     const tacoSelection = menu.filter(menu => (
         menu.catagory === 'tacos'
@@ -96,7 +102,8 @@ function HookMyFood(props) {
             </div>
             <div className="col">
                 <p>Sub-Total ${total}</p>
-                <button className='orderButton' onClick={() => setScreen(false)}>Pay Now</button>
+                <button className='backToMenu' onClick={() => setScreen(false)}>Back to Menu</button>
+                <button className='orderButton' onClick={clearOrder}>Pay Now</button>
             </div>
         </>
     )
