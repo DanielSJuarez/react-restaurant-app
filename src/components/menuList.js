@@ -1,7 +1,9 @@
-function MenuList({name, price, subTotal}) {
+function MenuList({ name, price, subTotal, order }) {
 
-const addToOrder = () => subTotal(price);
-
+    const addToOrder = () => {
+        subTotal(price);
+        order(name, price);
+    }
 
     return (
         <div className='row'>
