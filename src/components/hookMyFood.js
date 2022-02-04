@@ -27,7 +27,7 @@ function HookMyFood(props) {
 
     const removeOrder = (name) => {
         const removeSelectedItem = [...orderList];
-        const index = removeSelectedItem.findIndex(orderList => order.name === name);
+        const index = removeSelectedItem.findIndex(orderList => orderList.name === name);
         removeSelectedItem.splice(index, 1);
         setOrderList(removeSelectedItem);
     }

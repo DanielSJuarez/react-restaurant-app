@@ -1,4 +1,8 @@
+import {useState} from 'react'
+
 function OrderTotal({total}) {
+  const [screen, setScreen] = useState(false);
+
   return (
       <div className="col">
           <button className='orderButton'>Order Total</button>
