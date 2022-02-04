@@ -1,13 +1,13 @@
 import { useState } from "react";
 import MenuList from "./menuList";
 import OrderDisplay from "./orderDisplay";
-import OrderTotal from "./orderTotal";
 import MENU from "./menuItems";
 
 function HookMyFood(props) {
     const [menu, setMenu] = useState(MENU);
     const [total, setTotal] = useState(0);
     const [orderList, setOrderList] = useState([]);
+    const [screen, setScreen] = useState(false);
 
     const subTotal = (price) => {
         setTotal(total + price);
@@ -21,7 +21,7 @@ function HookMyFood(props) {
         setOrderList([...orderList, newOrderItem]);
     };
 
-    const removeSubTotal = (price) =>{
+    const removeSubTotal = (price) => {
         setTotal(total - price);
     };
 
@@ -58,33 +58,55 @@ function HookMyFood(props) {
     ));
 
     const orderDisplay = orderList.map(item => (
-        <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder}/>
+        <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} />
     ));
+
+    const menuScreen = (
+        <div className="container">
+            <div className='row'>
+                <h3 className='menuDisplay col'>Menu</h3>
+                <div className="col">
+                    <button className='orderButton' onClick={() => setScreen(true)}>Order Total</button>
+                    <p>${total}</p>
+                </div>
+                <div className='menuList col'>
+                    <h3 className='menuHeader'>Menu</h3>
+                    <section className='tacoDisplay'>
+                        <p className='tacoHeader'>Tacos</p>
+                        {tacoDisplay}
+                    </section>
+                    <section className='pizzaDisplay'>
+                        <p className='pizzaHeader'>Pizza</p>
+                        {pizzaDisplay}
+                    </section>
+                    <section className='sideDisplay'>
+                        <p className='sidesHeader'>Sides</p>
+                        {sidesDisplay}
+                    </section>
+                </div>
+            </div>
+        </div>
+    )
+
+    const orderScreen = (
+        <>
+            <h3 className='restaurantsDisplay col'>Your Order</h3>
+            <div>
+                {orderDisplay}
+            </div>
+            <div className="col">
+                <p>Sub-Total ${total}</p>
+                <button className='orderButton' onClick={() => setScreen(false)}>Pay Now</button>
+            </div>
+        </>
+    )
 
     return (
         <>
             <div className="container">
                 <div className='row'>
                     <div className='restaurantsDisplay col'>Hook My Food Cafe</div>
-                    <div>
-                        {orderDisplay}
-                        <OrderTotal total={total} />
-                    </div>
-                    <div className='menuList col'>
-                        <h3 className='menuHeader'>Menu</h3>
-                        <section className='tacoDisplay'>
-                            <p className='tacoHeader'>Tacos</p>
-                            {tacoDisplay}
-                        </section>
-                        <section className='pizzaDisplay'>
-                            <p className='pizzaHeader'>Pizza</p>
-                            {pizzaDisplay}
-                        </section>
-                        <section className='sideDisplay'>
-                            <p className='sidesHeader'>Sides</p>
-                            {sidesDisplay}
-                        </section>
-                    </div>
+                    {screen ? orderScreen : menuScreen}
                 </div>
             </div>
         </>
