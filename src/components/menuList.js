@@ -1,8 +1,12 @@
-function MenuList({name, price}) {
+function MenuList({name, price, subTotal}) {
+
+const addToOrder = () => subTotal(price);
+
+
     return (
         <div className='row'>
             <div className="col">
-            {name} ${price}
+                <button className='foodItemButtons' type='button' onClick={addToOrder}>{name} ${price}</button>
             </div>
         </div>
     );

@@ -1,18 +1,23 @@
 import { useState } from "react";
 import MenuList from "./menuList";
 import Order from "./order";
-import SubTotal from "./subTotal";
+import OrderTotal from "./orderTotal";
 import MENU from "./menuItems";
 
 function HookMyFood(props) {
     const [menu, setMenu] = useState(MENU);
+    const [total, setTotal] = useState(0);
+
+    const subTotal = (price) => {
+        setTotal(total + price);
+    }
 
     const tacoSelection = menu.filter(menu => (
         menu.catagory === 'tacos'
     ));
 
     const tacoDisplay = tacoSelection.map(menu => (
-        <MenuList {...menu}/>
+        <MenuList {...menu} subTotal={subTotal} />
     ));
 
     const pizzaSelection = menu.filter(menu => (
@@ -20,7 +25,7 @@ function HookMyFood(props) {
     ));
 
     const pizzaDisplay = pizzaSelection.map(menu => (
-        <MenuList {...menu}/>
+        <MenuList {...menu} subTotal={subTotal}/>
     ));
 
     const sidesSelection = menu.filter(menu => (
@@ -28,38 +33,32 @@ function HookMyFood(props) {
     ));
 
     const sidesDisplay = sidesSelection.map(menu => (
-        <MenuList {...menu}/>
+        <MenuList {...menu} subTotal={subTotal}/>
     ));
-
-    // const menuDisplay = menu.map(menu => (
-    //     <MenuList {...menu}/>
-    // ))
 
     return (
         <>
         <div className="container">
             <div className='row'>
-                <div className='menuHead col'>Hook My Food Cafe</div>
+                <div className='restaurantsDisplay col'>Hook My Food Cafe</div>
                 <div>
-                    <button className='subTotal col'>Order</button>
-                    <Order />
-                    <SubTotal />
+                    <Order/>
+                    <OrderTotal total={total}/>
                 </div>
                 <div className='menuList col'>
-                    <section>
-                        <p>Tacos</p>
+                    <h3 className='menuHeader'>Menu</h3>
+                    <section className='tacoDisplay'>
+                        <p className='tacoHeader'>Tacos</p>
                         {tacoDisplay}
                     </section>
-                    <section>
-                        <p>Pizza</p>
+                    <section className='pizzaDisplay'>
+                        <p className='pizzaHeader'>Pizza</p>
                         {pizzaDisplay}
-                        
                     </section>
-                    <section>
-                        <p>Sides</p>
+                    <section className='sideDisplay'>
+                        <p className='sidesHeader'>Sides</p>
                         {sidesDisplay}      
                     </section>
-                    {/* {menuDisplay} */}
                 </div>
             </div>
             </div>
