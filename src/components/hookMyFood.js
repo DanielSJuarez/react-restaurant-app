@@ -33,9 +33,7 @@ function HookMyFood(props) {
     }
 
     const clearOrder = () => {
-        let previousLocalStorage = JSON.parse(localStorage.getItem('orderlist'));
-        console.log(previousLocalStorage);
-        localStorage.setItem(previousLocalStorage, JSON.stringify(orderList));
+        localStorage.setItem(orderList, JSON.stringify(orderList));
         setTotal(0);
         setOrderList([]);
         setScreen(false);
