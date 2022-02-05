@@ -5,6 +5,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -12,6 +13,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -19,6 +21,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -26,6 +29,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -33,6 +37,7 @@ const MENU = [{
     price: 4,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -40,6 +45,7 @@ const MENU = [{
     price: 4,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -47,6 +53,7 @@ const MENU = [{
     price: 4,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -54,6 +61,7 @@ const MENU = [{
     price: 6,
     id: uuidv4(),
     catagory: 'tacos',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -61,6 +69,7 @@ const MENU = [{
     price: 6,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -68,6 +77,7 @@ const MENU = [{
     price: 7,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -75,6 +85,7 @@ const MENU = [{
     price: 8,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -82,6 +93,7 @@ const MENU = [{
     price: 10,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -89,6 +101,7 @@ const MENU = [{
     price: 2,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -96,6 +109,7 @@ const MENU = [{
     price: 10,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -103,6 +117,7 @@ const MENU = [{
     price: 10,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -110,6 +125,7 @@ const MENU = [{
     price: 12,
     id: uuidv4(),
     catagory: 'pizza',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -117,6 +133,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -124,6 +141,7 @@ const MENU = [{
     price: 2,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -131,6 +149,7 @@ const MENU = [{
     price: 4,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -138,6 +157,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -145,6 +165,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -152,6 +173,7 @@ const MENU = [{
     price: 5,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -159,6 +181,7 @@ const MENU = [{
     price: 5,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 {
@@ -166,6 +189,7 @@ const MENU = [{
     price: 3,
     id: uuidv4(),
     catagory: 'sides',
+    quantity: 1,
     size: 'M',
 },
 ];

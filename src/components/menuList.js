@@ -1,8 +1,8 @@
-function MenuList({ name, price, subTotal, order }) {
+function MenuList({ name, price, subTotal, order, quantity }) {
 
     const addToOrder = () => {
         subTotal(price);
-        order(name, price);
+        order(name, price, quantity);
     }
 
     return (

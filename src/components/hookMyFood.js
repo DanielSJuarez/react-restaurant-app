@@ -13,10 +13,11 @@ function HookMyFood(props) {
         setTotal(total + price);
     }
 
-    const order = (name, price) => {
+    const order = (name, price, quantity) => {
         const newOrderItem = {
             name,
             price,
+            quantity,
         }
         setOrderList([...orderList, newOrderItem]);
     };
@@ -25,10 +26,11 @@ function HookMyFood(props) {
         setTotal(total - price);
     };
 
-    const removeOrder = (name) => {
+    const removeOrder = (name , quantity) => {
         const removeSelectedItem = [...orderList];
         const index = removeSelectedItem.findIndex(orderList => orderList.name === name);
         removeSelectedItem.splice(index, 1);
+        quantity = quantity - 1;
         setOrderList(removeSelectedItem);
     }
 
@@ -64,8 +66,14 @@ function HookMyFood(props) {
         <MenuList key={menu.id} {...menu} subTotal={subTotal} order={order} />
     ));
 
+    // const uniqueOrder = [...new Set(orderList.map(item => item.name))];
+
+    //     const orderDisplay = uniqueOrder.map(item => (
+    //         <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
+    //     ));
+
     const orderDisplay = orderList.map(item => (
-        <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} />
+        <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
     ));
 
     const menuScreen = (
