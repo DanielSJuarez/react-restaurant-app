@@ -87,10 +87,11 @@ function HookMyFood(props) {
     const menuScreen = (
         <div className="container">
             <div className='row'>
+            <h1 className='restaurantsDisplay col'>Hook My Food Cafe</h1>
                 <h3 className='menuDisplay col-12'>Our Menu</h3>
-                <div className="col-12">
+                <div className="orderDetails col-12">
                     <button className='orderButton' onClick={() => setScreen(true)}>Your Cart</button>
-                    <p>${total}</p>
+                    <p className='mainTotal' onClick={() => setScreen(true)}>${total}</p>
                 </div>
                 <div className='menuList col'>
                     {/* <h3 className='menuHeader'>Catagories</h3> */}
@@ -114,14 +115,16 @@ function HookMyFood(props) {
 
     const orderScreen = (
         <>
-            <h3 className='restaurantsDisplay col'>Your Order</h3>
+            <h2 className='restaurantsDisplay col'>Order Details</h2>
             <div>
                 {orderDisplay}
             </div>
             <div className="col">
-                <p>Sub-Total ${total}</p>
-                <button className='backToMenu' onClick={() => setScreen(false)}>Back to Menu</button>
-                <button className='orderButton' onClick={clearOrder}>Pay Now</button>
+                <p className='subTotal'>Sub-Total ${total}</p>
+                <div className='col'>  
+                    <button className='backToMenu' onClick={() => setScreen(false)}>Back to Menu</button>
+                    <button className='orderButton' onClick={clearOrder}>Pay Now</button>
+                </div>
             </div>
         </>
     )
@@ -130,7 +133,6 @@ function HookMyFood(props) {
         <>
             <div className="container">
                 <div className='row'>
-                    <h1 className='restaurantsDisplay col'>Hook My Food Cafe</h1>
                     {screen ? orderScreen : menuScreen}
                 </div>
             </div>
