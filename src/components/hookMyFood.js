@@ -35,7 +35,8 @@ function HookMyFood(props) {
     }
 
     const clearOrder = () => {
-        localStorage.setItem(orderList, JSON.stringify(orderList));
+        let previousLocalStorage = localStorage.getItem('orderList');
+        localStorage.setItem('orderList', JSON.stringify([orderList, previousLocalStorage]));
         setTotal(0);
         setOrderList([]);
         setScreen(false);
@@ -67,10 +68,11 @@ function HookMyFood(props) {
     ));
 
     // const uniqueOrder = [...new Set(orderList.map(item => item.name))];
+    // console.log(uniqueOrder);
 
-    //     const orderDisplay = uniqueOrder.map(item => (
-    //         <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
-    //     ));
+    // const orderDisplay = uniqueOrder.map(item => (
+    //      <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
+    // ));
 
     const orderDisplay = orderList.map(item => (
         <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
