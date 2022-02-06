@@ -26,7 +26,7 @@ function HookMyFood(props) {
         setTotal(total - price);
     };
 
-    const removeOrder = (name , quantity) => {
+    const removeOrder = (name, quantity) => {
         const removeSelectedItem = [...orderList];
         const index = removeSelectedItem.findIndex(orderList => orderList.name === name);
         removeSelectedItem.splice(index, 1);
@@ -67,40 +67,47 @@ function HookMyFood(props) {
         <MenuList key={menu.id} {...menu} subTotal={subTotal} order={order} />
     ));
 
-    // const uniqueOrder = [...new Set(orderList.map(item => item.name))];
-    // console.log(uniqueOrder);
+    // const uniqueOrder = [...new Set(orderList.map(item => {
+    //     return {
+    //         name: item.name,
+    //         price: item.price,
+    //         quantity: item.quantity,
+    //     }
+    // }))];
+    // // console.log(uniqueOrder);
 
     // const orderDisplay = uniqueOrder.map(item => (
     //      <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
     // ));
 
     const orderDisplay = orderList.map(item => (
-        <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
+        <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal} />
     ));
 
     const menuScreen = (
         <div className="container">
             <div className='row'>
-                <h3 className='menuDisplay col'>Menu</h3>
-                <div className="col">
-                    <button className='orderButton' onClick={() => setScreen(true)}>Order Total</button>
+                <h3 className='menuDisplay col-12'>Our Menu</h3>
+                <div className="col-12">
+                    <button className='orderButton' onClick={() => setScreen(true)}>Your Cart</button>
                     <p>${total}</p>
                 </div>
                 <div className='menuList col'>
-                    <h3 className='menuHeader'>Menu</h3>
-                    <section className='tacoDisplay'>
-                        <p className='tacoHeader'>Tacos</p>
+                    {/* <h3 className='menuHeader'>Catagories</h3> */}
+                    <section className='tacoDisplay row'>
+                        <p className='catHeader'>Tacos</p>
                         {tacoDisplay}
                     </section>
-                    <section className='pizzaDisplay'>
-                        <p className='pizzaHeader'>Pizza</p>
+                    <section className='pizzaDisplay row'>
+                        <p className='catHeader'>Pizza</p>
                         {pizzaDisplay}
                     </section>
-                    <section className='sideDisplay'>
-                        <p className='sidesHeader'>Sides</p>
+                    <section className='sideDisplay row'>
+                        <p className='catHeader'>Sides</p>
                         {sidesDisplay}
                     </section>
                 </div>
+                <footer className='footer'><a href="h1">Back to the top</a></footer>
             </div>
         </div>
     )
@@ -123,7 +130,7 @@ function HookMyFood(props) {
         <>
             <div className="container">
                 <div className='row'>
-                    <div className='restaurantsDisplay col'>Hook My Food Cafe</div>
+                    <h1 className='restaurantsDisplay col'>Hook My Food Cafe</h1>
                     {screen ? orderScreen : menuScreen}
                 </div>
             </div>

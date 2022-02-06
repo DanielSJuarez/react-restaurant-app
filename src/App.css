@@ -39,4 +39,68 @@
 
 .foodItemButtons {
   border: none;
+  background-color: #bc4f07;
+  width: 98%;
+  height: 50px;
+  margin-bottom: 35px;
+}
+
+.restaurantsDisplay{
+  color: #fe982a;
+  background-image: linear-gradient(to bottom, #005236, #6bc4ab);
+  text-align: center;
+  word-spacing: 10px;
+  padding-top: 10px;
+}
+
+.menuDisplay{
+  border: solid 5px #fe982a;
+  color: #fe982a;
+  background-color: #20686c;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.menuHeader{
+  border: solid 5px #fe982a;
+  color: #fe982a;
+  background-color: #20686c;
+  padding-left: 5px;
+}
+
+.container{
+  background-color: #6bc4ab;
+}
+
+.imgDiv{
+  max-width: 300px;
+  height: auto;
+  cursor: pointer;
+}
+
+.foodItemButtons:hover{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  text-decoration: underline;
+}
+
+.catHeader{
+  color: #fe982a;
+  background-color: #bc4f07;
+  margin-right: 500px;
+  height: 30px;
+  padding-top: 4px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.footer{
+  background-image: linear-gradient(to bottom, #6bc4ab, #005236);
+  height: 50px;
+  text-align: right;
+}
+
+a{
+  color: #bc4f07;
+  cursor: pointer;
+  text-decoration: none;
 }
