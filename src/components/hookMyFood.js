@@ -30,7 +30,7 @@ function HookMyFood(props) {
         const removeSelectedItem = [...orderList];
         const index = removeSelectedItem.findIndex(orderList => orderList.name === name);
         removeSelectedItem.splice(index, 1);
-        quantity = quantity - 1;
+        // quantity = quantity - 1;
         setOrderList(removeSelectedItem);
     }
 
@@ -67,14 +67,18 @@ function HookMyFood(props) {
         <MenuList key={menu.id} {...menu} subTotal={subTotal} order={order} />
     ));
 
-    // const uniqueOrder = [...new Set(orderList.map(item => {
+    // const uniqueOrder = [new Set(orderList.map(item => {
+    //     if(orderList.includes(item.name)){
+    //         return true
+    //     } else {
     //     return {
     //         name: item.name,
     //         price: item.price,
     //         quantity: item.quantity,
     //     }
-    // }))];
-    // // console.log(uniqueOrder);
+    //     return false
+    // }}))];
+    // console.log(uniqueOrder);
 
     // const orderDisplay = uniqueOrder.map(item => (
     //      <OrderDisplay {...item} removeSubTotal={removeSubTotal} removeOrder={removeOrder} order={order} subTotal={subTotal}/>
@@ -91,7 +95,7 @@ function HookMyFood(props) {
                 <h3 className='menuDisplay col-12'>Our Menu</h3>
                 <div className="orderDetails col-12">
                     <button className='orderButton' onClick={() => setScreen(true)}>Your Cart</button>
-                    <p className='mainTotal' onClick={() => setScreen(true)}>${total}</p>
+                    <p className='subTotal' onClick={() => setScreen(true)}>Sub-Total ${total}</p>
                 </div>
                 <div className='menuList col'>
                     {/* <h3 className='menuHeader'>Catagories</h3> */}
@@ -123,7 +127,8 @@ function HookMyFood(props) {
                 <p className='subTotal'>Sub-Total ${total}</p>
                 <div className='col'>  
                     <button className='backToMenu' onClick={() => setScreen(false)}>Back to Menu</button>
-                    <button className='orderButton' onClick={clearOrder}>Pay Now</button>
+                    <button className='completeButton' onClick={clearOrder}>Cancel</button>
+                    <button className='completeButton' onClick={clearOrder}>Pay Now</button>
                 </div>
             </div>
         </>

@@ -1,4 +1,4 @@
-function MenuList({ name, price, subTotal, order, quantity, url }) {
+function MenuList({ name, price, subTotal, order, quantity, url}) {
 
     const addToOrder = () => {
         subTotal(price);

@@ -1,25 +1,23 @@
-function OrderDisplay({ name, price, removeSubTotal, removeOrder, order, subTotal, quantity }) {
+function OrderDisplay({ name, price, removeSubTotal, removeOrder, order, subTotal, quantity}) {
 
-    const removeFromOrder = () => {
-        // quantity = quantity - 1;
-        console.log(quantity);
-        removeSubTotal(price);
-        removeOrder(name);
-    }
+    // const removeFromOrder = () => {
+    //     quantity = quantity - 1;
+    //     console.log(quantity);
+    //     removeSubTotal(price);
+    //     removeOrder(name);
+    // }
 
-    const addToQuantity = () => {
-        // quantity = quantity + 1;
-        order(name, price, quantity);
-        subTotal(price);
-        console.log(quantity);
-    }
+    // const addToQuantity = () => {
+    //     quantity = quantity + 1;
+    //     order(name, price, quantity);
+    //     subTotal(price);
+    //     console.log(quantity);
+    // }
 
     const deleteFromOrder = () => {
         removeSubTotal(price);
         removeOrder(name);
         // quantity = 1;
-        console.log(quantity);
-
     }
 
 

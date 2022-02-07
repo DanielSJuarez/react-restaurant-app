@@ -123,15 +123,6 @@ a{
   border: solid 1px white;
 }
 
-.mainTotal{
-  font-weight: 700;
-  color: black;
-  width: 60px;
-  background-color: white;
-  padding-left: 5px;
-  border: solid 1px black;
-}
-
 .orderDetails{
   position: sticky;
   top: 0;
@@ -156,7 +147,7 @@ a{
   background-color: #005236;
   color: white;
   border: solid 1px white;
-  margin: 10px 696px 10px 0px;
+  margin: 10px 686px 10px 0px;
   font-weight: 700;
   width: 300px;
 }
@@ -187,4 +178,19 @@ a{
 
 .deleteItem{
   margin-left: 119px;
+}
+
+.completeButton{
+  background-color: #fe982a;
+  border: solid 1px black;
+  margin: 10px 10px 10px 0px;
+  font-weight: 700;
+  width: 145px;
+}
+
+.completeButton:hover{
+  background-color:#005236;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border: solid 1px white;
 }
