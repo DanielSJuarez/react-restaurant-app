@@ -86,7 +86,7 @@ function HookMyFood(props) {
 
     const menuScreen = (
         <div className="container">
-            <div className='row'>
+            <div className='main row'>
             <h1 className='restaurantsDisplay col'>Hook My Food Cafe</h1>
                 <h3 className='menuDisplay col-12'>Our Menu</h3>
                 <div className="orderDetails col-12">
@@ -95,15 +95,15 @@ function HookMyFood(props) {
                 </div>
                 <div className='menuList col'>
                     {/* <h3 className='menuHeader'>Catagories</h3> */}
-                    <section className='tacoDisplay row'>
+                    <section className='display row'>
                         <p className='catHeader'>Tacos</p>
                         {tacoDisplay}
                     </section>
-                    <section className='pizzaDisplay row'>
+                    <section className='display row'>
                         <p className='catHeader'>Pizza</p>
                         {pizzaDisplay}
                     </section>
-                    <section className='sideDisplay row'>
+                    <section className='display row'>
                         <p className='catHeader'>Sides</p>
                         {sidesDisplay}
                     </section>
